@@ -2,10 +2,11 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [prompt, setPrompt] = useState("initial phrase");
+  const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("no response");
 
   const sendPrompt = async () => {
+    setResponse("Waiting...");
     const res = await fetch("/api/ollama", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

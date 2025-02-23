@@ -9,7 +9,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         model: "llama3",
-        prompt,
+        prompt: prompt,
         stream: false,
       }),
     });
